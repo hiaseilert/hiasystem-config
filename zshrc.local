@@ -1,0 +1,18 @@
+# hias ZSH-Konfiguration
+# Version:
+#	2024-08-24.0 Erste
+#	2024-08-24.1 Aliases sind Ausgelagert damit auch bash die selben benutzen kann.
+#	2024-08-25.2 Helferfunktion zum laden von Konfigurationsdateien. 
+#
+
+# Helferfunktion zum laden von Konfigurationsdateien.
+loadSource(){
+	if [ -r $1 ]; then
+		source $1
+	fi
+}
+
+# Aliases laden
+loadSource /opt/hiasystem/config/shellaliases
+loadSource ~/.config/shellaliases
+

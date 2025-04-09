@@ -1,0 +1,19 @@
+# Diese Datei ist Teil von hiasystem config.
+# Shall-Alias die von  bash  und  zsh  gelesen werden können. Diese Datei einfach an der gewünschen Stelle mit  source dateiname  einbinden.
+# Version:
+#	2024-08-24.0 Erste.
+#
+
+alias ls='ls --color=auto -lh'
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+
+# Mit  t  gelanngt man dann zurück in die letzte  tmux  session. (tmux attach) wenn es keine Session gibt, wird eine eröffnet (tmux) nach verlassen von tmux wird die session beendet (exit)
+alias t='(tmux attach || tmux) && exit'
+
+# Wenn  sudo  nicht installiert ist verwenden wir die Systemd Lösung.
+if ! which sudo > /dev/null 2> /dev/null; then
+	# sudo ist nicht da.
+	alias sudo='run0'
+fi

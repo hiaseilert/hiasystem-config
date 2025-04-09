@@ -1,0 +1,67 @@
+{
+	"install":
+	{
+		"packagediskription":	"hiasystem / config",
+		"dependencies":
+		[
+			"bash",
+			"tmux",
+			"vim",
+			"systemd"
+		],
+		"directory":	"/opt/hiasystem/config",
+		"owner":	"root",
+		"group":	"root",
+		"mod":	"644",
+		"files":
+		[
+			{
+				"source": "install.sh",
+				"destination": "",
+				"owner": "",
+				"group": "",
+				"mod":"755",
+				"ignore": 1
+			},
+			{
+				"source": "default.install.json",
+				"ignore": 1
+			},
+			{
+				"source": "install.json",
+				"ignore": 1
+			},
+			{	"source": "bashrc",
+				"ignore": 0
+			},
+			{	"source": "zshrc.local",
+				"ignore": 0
+			},
+			{	"source": "shellaliases",
+				"ignore": 0
+			},
+			{
+				"source": "tmux.conf",
+				"destination": "/etc/tmux.conf",
+				"ignore": 0
+			},
+			{
+				"source": "tmux-autorun.conf",
+				"ignore": 0
+			},
+			{	"source": "vimrc",
+				"ignore": 0
+			},
+			{
+				"source": "disable-coredump.conf",
+				"destination": "/etc/systemd/coredump.conf.d/50-disable.conf",
+				"ignore": 0
+			},
+			{
+				"source": "50-hiasystem-sshd-homed.conf",
+				"destination": "/etc/ssh/sshd_config.d/50-hiasystem-sshd-homed.conf",
+				"ignore": 1
+			}
+		]
+	}
+}
